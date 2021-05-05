@@ -1,3 +1,4 @@
+const bcrypt = require("bcryptjs");
 const monsoose = require("mongoose");
 const userSchema = new monsoose.Schema({
   email: {
@@ -10,5 +11,10 @@ const userSchema = new monsoose.Schema({
   },
 });
 
-const User = monsoose.Model("User", userSchema);
+userSchema.pre("save", async function (next) {
+  this.password = await bcrypt.hash(this.password, 12);
+  next();
+});
+
+const User = monsoose.model("User", userSchema);
 module.exports = User;
