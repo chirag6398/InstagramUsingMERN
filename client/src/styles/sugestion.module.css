@@ -1,0 +1,24 @@
+.sugestion_userSection {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  flex-wrap: wrap;
+}
+
+.user_follow_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+.user_follow_style > p {
+  cursor: pointer;
+}
+.sugestion_container {
+  min-width: 304px;
+  position: fixed;
+}
