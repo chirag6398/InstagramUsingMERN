@@ -5,18 +5,20 @@
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 10px 20px 10px 20px;
+  /* padding: 10px 20px 10px 20px; */
   height: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: white;
   border-bottom: 1px solid lightgrey;
-  box-shadow: -3px 4px 10px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: -3px 0px 10px -5px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 .links {
   display: flex;
-  align-items: center;
-  width: 230px;
   justify-content: space-around;
+  align-items: center;
+  width: 212px;
 }
 
 .header__input {
@@ -32,6 +34,10 @@
 }
 
 @media all and (max-width: 650px) {
+  .ext_div {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
   .header__input {
     display: none;
   }

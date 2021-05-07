@@ -13,6 +13,7 @@
   border-radius: 2px;
   flex-direction: row;
   overflow-x: scroll;
+  margin-top: 55px;
 }
 .home_sugestionPortion {
   display: flex;
@@ -46,6 +47,7 @@
     overflow-x: scroll;
     border: 1px solid lightgray;
     border-radius: 2px;
+    margin-top: 0px;
   }
   .home_sugestionPortion {
     display: none;
