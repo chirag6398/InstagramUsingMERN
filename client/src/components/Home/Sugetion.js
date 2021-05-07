@@ -1,13 +1,21 @@
-import { Avatar } from "@material-ui/core";
 import React from "react";
 import sugestionStyle from "../../styles/sugestion.module.css";
-import avatarimg from "../../images/demoUserImg.jpg";
 import duserImg from "../../images/storyimg.jpg";
 export default function Sugetion({ user }) {
   return (
     <div className={sugestionStyle.sugestion_container}>
       <div className={sugestionStyle.sugestion_userSection}>
-        <Avatar style={{ cursor: "pointer" }} alt="..." src={avatarimg} />
+        <img
+          alt="..."
+          src={duserImg}
+          style={{
+            height: "65px",
+            padding: "3px 3px",
+            objectFit: "contain",
+            border: "1px solid rgb(243, 38, 38)",
+            borderRadius: "123px",
+          }}
+        />
         <div className={sugestionStyle.user_follow_style}>
           <p>{user ? <span>{user}</span> : "chirag112_agrawal"}</p>
           <p style={{ color: "blue", fontWeight: "600", cursor: "pointer" }}>
@@ -23,7 +31,17 @@ export default function Sugetion({ user }) {
       </div>
 
       <div className={sugestionStyle.sugestion_userSection}>
-        <Avatar style={{ cursor: "pointer" }} alt="..." src={duserImg} />
+        <img
+          style={{
+            height: "65px",
+            padding: "3px 3px",
+            objectFit: "contain",
+            border: "1px solid rgb(243, 38, 38)",
+            borderRadius: "123px",
+          }}
+          alt="..."
+          src={duserImg}
+        />
         <div className={sugestionStyle.user_follow_style}>
           <p>user_name</p>
           <p style={{ color: "blue", fontWeight: "600", cursor: "pointer" }}>
@@ -32,7 +50,17 @@ export default function Sugetion({ user }) {
         </div>
       </div>
       <div className={sugestionStyle.sugestion_userSection}>
-        <Avatar style={{ cursor: "pointer" }} alt="..." src={duserImg} />
+        <img
+          style={{
+            height: "65px",
+            padding: "3px 3px",
+            objectFit: "contain",
+            border: "1px solid rgb(243, 38, 38)",
+            borderRadius: "123px",
+          }}
+          alt="..."
+          src={duserImg}
+        />
         <div className={sugestionStyle.user_follow_style}>
           <p>user_name</p>
           <p style={{ color: "blue", fontWeight: "600", cursor: "pointer" }}>
@@ -41,7 +69,17 @@ export default function Sugetion({ user }) {
         </div>
       </div>
       <div className={sugestionStyle.sugestion_userSection}>
-        <Avatar style={{ cursor: "pointer" }} alt="..." src={duserImg} />
+        <img
+          style={{
+            height: "65px",
+            padding: "3px 3px",
+            objectFit: "contain",
+            border: "1px solid rgb(243, 38, 38)",
+            borderRadius: "123px",
+          }}
+          alt="..."
+          src={duserImg}
+        />
         <div className={sugestionStyle.user_follow_style}>
           <p>user_name</p>
           <p style={{ color: "blue", fontWeight: "600", cursor: "pointer" }}>
@@ -50,7 +88,17 @@ export default function Sugetion({ user }) {
         </div>
       </div>
       <div className={sugestionStyle.sugestion_userSection}>
-        <Avatar style={{ cursor: "pointer" }} alt="..." src={duserImg} />
+        <img
+          style={{
+            height: "65px",
+            padding: "3px 3px",
+            objectFit: "contain",
+            border: "1px solid rgb(243, 38, 38)",
+            borderRadius: "123px",
+          }}
+          alt="..."
+          src={duserImg}
+        />
         <div className={sugestionStyle.user_follow_style}>
           <p>user_name</p>
           <p style={{ color: "blue", fontWeight: "600", cursor: "pointer" }}>

@@ -7,7 +7,7 @@
   height: 14vh;
   display: flex;
   background-color: white;
-  margin-left: 13vw;
+  margin-left: 21vw;
   align-items: center;
   border: 1px solid lightgray;
   border-radius: 2px;
@@ -17,7 +17,7 @@
 }
 .home_sugestionPortion {
   display: flex;
-  margin: 16px 9px;
+  margin: 68px 9px;
   flex: 1;
 }
 .storySection::-webkit-scrollbar {
