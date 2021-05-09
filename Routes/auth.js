@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../model/userSchema");
-
+const Authenticate = require("../middleware/Authenticate");
 router.get("/", (req, res) => {
   res.send("hello auth");
 });
@@ -81,6 +81,11 @@ router.post("/api/register", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get("/api/logout", Authenticate, (req, res) => {
+  res.clearCookie("jwttoken", { path: "/" });
+  res.status(201).json({ message: "user logout successefully", status: 201 });
 });
 
 module.exports = router;

@@ -14,10 +14,10 @@ const Authenticate = async function (req, res, next) {
       req.UserEmail = req.userExist.email;
       next();
     } else {
-      console.log("user not login");
+      throw new Error("user not found");
     }
   } catch (err) {
-    console.log(err);
+    res.status(401).send("unauthorized: no token available");
   }
 };
 
