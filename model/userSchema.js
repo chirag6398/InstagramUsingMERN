@@ -21,7 +21,7 @@ const userSchema = new monsoose.Schema({
 });
 userSchema.methods.generateAuthToken = async function () {
   try {
-    const token = jwt.sign({ id: this._id }, process.env.SECRET_KEY);
+    let token = jwt.sign({ id: this._id }, process.env.SECRET_KEY);
     this.tokens = this.tokens.concat({ token: token });
     await this.save();
     return token;

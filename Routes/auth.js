@@ -3,9 +3,6 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../model/userSchema");
 const Authenticate = require("../middleware/Authenticate");
-router.get("/", (req, res) => {
-  res.send("hello auth");
-});
 
 router.post("/api/signin", async (req, res) => {
   try {
@@ -22,7 +19,7 @@ router.post("/api/signin", async (req, res) => {
         if (isMatch) {
           const token = await userExist.generateAuthToken();
           console.log("token : ", token);
-          res.cookie("jwttoken", token, {
+          res.cookie("jwtToken", token, {
             expires: new Date(Date.now() + 25892000000),
             httpOnly: true,
           });
@@ -84,8 +81,9 @@ router.post("/api/register", async (req, res) => {
 });
 
 router.get("/api/logout", Authenticate, (req, res) => {
-  res.clearCookie("jwttoken", { path: "/" });
-  res.status(201).json({ message: "user logout successefully", status: 201 });
+  console.log("successful");
+  res.clearCookie("jwtToken", { path: "/" });
+  res.status(201).send("user logout successfully");
 });
 
 module.exports = router;
