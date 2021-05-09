@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import headerStyle from "../styles/header.module.css";
 import instaLogo from "../images/instaLogo.png";
 
 import avatarimg from "../images/demoUserImg.jpg";
 
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
@@ -15,16 +15,25 @@ import SendRoundedIcon from "@material-ui/icons/SendRounded";
 import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import Dropdown from "./Dropdown";
+import { TweenMax, Power3 } from "gsap";
 export default function Header() {
   const active_page = useParams();
+  let dropRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
-
-  const history = useHistory();
 
   const dropDownHandler = () => {
     setShowDropdown(!showDropdown);
-    // history.push("/login");
   };
+  useEffect(() => {
+    if (showDropdown) {
+      TweenMax.from(dropRef, {
+        duration: 0.5,
+        opacity: 0,
+        ease: Power3.easeIn,
+      });
+    }
+  });
+
   return (
     <div className={headerStyle.ext_div}>
       <div className={headerStyle.header__logo}>
@@ -81,7 +90,15 @@ export default function Header() {
             style={{ cursor: "pointer" }}
             src={avatarimg}
           />
-          {showDropdown ? <Dropdown /> : null}
+          {showDropdown ? (
+            <div
+              ref={(el) => {
+                dropRef = el;
+              }}
+            >
+              <Dropdown />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

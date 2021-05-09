@@ -5,7 +5,15 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import BookmarkBorderOutlinedIcon from "@material-ui/icons/BookmarkBorderOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import SwapHorizOutlinedIcon from "@material-ui/icons/SwapHorizOutlined";
+import { useHistory } from "react-router-dom";
 export default function Dropdown() {
+  const history = useHistory();
+  const logoutHandler = () => {
+    history.push("/login");
+  };
+  const LoginHandler = () => {
+    history.push("/login");
+  };
   return (
     <div className="dropdown__extDiv">
       <div className="dropdown__uparrow">
@@ -30,7 +38,10 @@ export default function Dropdown() {
         </div>
       </div>
       <div className="dropdown__line"></div>
-      <div className="dropdown__menuRow">
+      <div className="dropdown__menuRow" onClick={LoginHandler}>
+        <span>Log in</span>
+      </div>
+      <div className="dropdown__menuRow" onClick={logoutHandler}>
         <span>log out</span>
       </div>
     </div>
